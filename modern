@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Modern Website</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, h2, h3, p {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 1rem;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('hero-bg.jpg');
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+      text-align: center;
+      padding: 5rem 0;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+    }
+
+    /* Feature Section */
+    .features {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5rem 0;
+    }
+
+    .feature {
+      text-align: center;
+      margin: 0 2rem;
+    }
+
+    .feature i {
+      font-size: 3rem;
+      color: #333;
+    }
+
+    .feature h2 {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-color: #f4f4f4;
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact button {
+      background-color: #333;
+      color: #fff;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact button:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="hero">
+    <h1>Welcome to Our Modern Website</h1>
+    <p>Discover the future of web design.</p>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <i class="fas fa-desktop"></i>
+      <h2>Responsive Design</h2>
+      <p>Our website looks great on all devices.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-palette"></i>
+      <h2>Beautiful Styles</h2>
+      <p>Elegant and modern visual design.</p>
+    </div>
+    <div class="feature">
+      <i class="fas fa-cogs"></i>
+      <h2>Advanced Functionality</h2>
+      <p>Powerful features for a seamless experience.</p>
+    </div>
+  </div>
+
+  <div class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea placeholder="Your Message"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>

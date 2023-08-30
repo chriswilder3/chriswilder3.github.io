@@ -1,36 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Checkbox Button Example</title>
+    <title>SlideDown Selection Example</title>
+    <style>
+        select {
+            width: 200px;
+            padding: 5px;
+        }
+        
+        .unanswered {
+            color: red;
+        }
+        
+        .partial {
+            color: yellow;
+        }
+        
+        .answered {
+            color: green;
+        }
+    </style>
 </head>
 <body>
 
-<label for="checkbox">Check this:</label>
-<input type="checkbox" id="checkbox" name="checkbox">
-<p>Status: <span id="status">Unchecked</span></p>
+<label for="status">Select status:</label>
+<select id="status" name="status">
+    <option value="unanswered" class="unanswered">Unanswered</option>
+    <option value="partial" class="partial">Partial Complete</option>
+    <option value="answered" class="answered">Answered</option>
+</select>
+<button id="saveStatus">Save Status</button>
+<p>Status: <span id="displayStatus">---</span></p>
 
 <script>
-    const checkbox = document.getElementById("checkbox");
-    const statusElement = document.getElementById("status");
+    const statusSelect = document.getElementById("status");
+    const saveButton = document.getElementById("saveStatus");
+    const displayStatusElement = document.getElementById("displayStatus");
 
-    checkbox.addEventListener("change", () => {
-        const status = checkbox.checked ? "Checked" : "Unchecked";
-        statusElement.textContent = status;
-
-        // Send the status to the backend using a function (e.g., using fetch or XMLHttpRequest)
-        sendDataToBackend(status);
+    saveButton.addEventListener("click", () => {
+        const selectedOption = statusSelect.options[statusSelect.selectedIndex];
+        const selectedStatus = selectedOption.value;
+        saveStatusToBackend(selectedStatus);
     });
 
-    function sendDataToBackend(status) {
-        // Use JavaScript to send the status to the backend
-        // You can use fetch, XMLHttpRequest, or other methods to make an HTTP request to the backend endpoint.
-        // Example using fetch:
-        fetch("backend.php", {
+    function saveStatusToBackend(status) {
+        fetch("save_status.php", {
             method: "POST",
             body: JSON.stringify({ status }),
             headers: {
                 "Content-Type": "application/json"
             }
+        }).then(response => response.json())
+        .then(data => {
+            displayStatusElement.textContent = data.status;
+            displayStatusElement.style.color = data.color;
         });
     }
 </script>

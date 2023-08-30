@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox Button Example</title>
+</head>
+<body>
+
+<label for="checkbox">Check this:</label>
+<input type="checkbox" id="checkbox" name="checkbox">
+<p>Status: <span id="status">Unchecked</span></p>
+
+<script>
+    const checkbox = document.getElementById("checkbox");
+    const statusElement = document.getElementById("status");
+
+    checkbox.addEventListener("change", () => {
+        const status = checkbox.checked ? "Checked" : "Unchecked";
+        statusElement.textContent = status;
+
+        // Send the status to the backend using a function (e.g., using fetch or XMLHttpRequest)
+        sendDataToBackend(status);
+    });
+
+    function sendDataToBackend(status) {
+        // Use JavaScript to send the status to the backend
+        // You can use fetch, XMLHttpRequest, or other methods to make an HTTP request to the backend endpoint.
+        // Example using fetch:
+        fetch("backend.php", {
+            method: "POST",
+            body: JSON.stringify({ status }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

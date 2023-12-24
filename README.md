@@ -1,2 +1,1 @@
-# chriswilder3.github.io
-THis points to a website
+A custom website showcasing interesting animes with their infornation
